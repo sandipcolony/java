@@ -1,0 +1,90 @@
+SLIP NO.6 
+Q1. 
+<?xml version="1.0" ?> 
+ 
+<bookinfo> 
+<Book bid="b001"> 
+ 
+<bname>java</bname> 
+<author> abc </author> 
+<publication>Vision</publication> 
+<price>123</price> 
+</Book> 
+ 
+<Book bid="b002"> 
+ 
+<bname>PHP</bname> 
+<author> pqr </author> 
+<publication>Techmax</publication> 
+<price>250</price> 
+</Book> 
+ 
+<Book bid="b001"> 
+ 
+<bname>OS</bname> 
+<author> qqq </author> 
+<publication>Nirali</publication> 
+<price>127</price> 
+</Book> 
+</bookinfo> 
+ 
+ 
+PHP CODE 
+<?php 
+$xml=simplexml_load_file('book.xml') or die("can not load"); 
+echo"BOOK DETAILS<br>"; 
+echo"<table border='1'>"; 
+echo"<tr><th>bid</th><th>bname</th><th>author</th><th>publication</th><th>price</th></t
+ r>"; 
+foreach($xml->Book as $a) 
+{ 
+echo "<tr>"; 
+
+echo"<td>".$a['bid']."</td>"; 
+echo "<td>".$a->bname."</td>"; 
+echo "<td>".$a->author."</td>"; 
+echo "<td>".$a->publication."</td>"; 
+echo"<td>".$a->price."</td></tr>"; 
+} 
+echo"</table>"; 
+ 
+?>
+
+2.
+ Importpandasaspd
+ Frommlxtend.preprocessingimportTransactionEncoder
+ Frommlxtend.frequent_patternsimportapriori,association_rules
+ #createthedataset
+ TID=
+ {1:[“bread”,”milk”],2:[“bread”,”diaper”,”beer”,”eggs”],3:[“milk”,”diaper”,”beer”,”coke”],4:[“bread”,”mil
+ k”,”diaper”,”beer”],5:[“bread”,”milk”,”diaper”,”coke”]}
+ Transactions=[]
+ Forkey,valueinTID.items():
+ Transactions.append(value)
+ #convertthecategoricalvaluesintonumericformat
+ Te=TransactionEncoder()
+ Te_ary=te.fit_transform(transactions)
+ Df=pd.DataFrame(te_ary,columns=te.columns_)
+#applytheapriorial
+ gorithmwithdifferentmi
+ n_supvalues
+ Min_sup_values=[0.2,0.
+ 4,0.6]
+ Formin_supinmin_sup_values:
+ Frequent_i
+ temsets=apriori
+ (df,min_support=mi
+ Rules=association_rul
+ es(frequent_i
+ Print(“Mi
+ n_sup:”,min_sup)
+ Print(“Fr
+ equentItemsets:
+ ”)
+ Print(fr
+ equent_itemsets)
+ Print(“Associ
+ ationRules:
+ ”)
+ Print(rul
+ es

@@ -1,0 +1,101 @@
+SLIP NO.12 
+
+Q1. 
+HTML CODE 
+<html> 
+<head> 
+<style> 
+span 
+{ 
+                font-size: 25px; 
+} 
+table 
+{ 
+                color: blueviolet; ; 
+} 
+</style> 
+ 
+<script type="text/javascript" > 
+                function print() 
+                { 
+                                var ob=false; 
+                                ob=new XMLHttpRequest(); 
+              
+                                ob.open("GET","a1.php?"); 
+                                ob.send();          
+              
+                                ob.onreadystatechange=function() 
+                                { 
+                                                if(ob.readyState==4 && ob.status==200) 
+                                                { 
+                     document.getElementById("i").innerHTML=ob.responseText; 
+                                                } 
+                                } 
+                }            
+</script> 
+</head> 
+ 
+<body> 
+<center> 
+<h3>Display the contents of a contact.dat file </h3> 
+<form id="myform" action="a1.php" method="GET"> 
+<br><input  type="button"  value=Print onclick="print()"> 
+</form> 
+<span id="i"></span> 
+</center> 
+</body> 
+</html>
+2. Importnumpyasnp
+ Importpandasaspd
+ Fromsklearn.l
+ inear_modelimportLi
+ Fromsklearn.model_sel
+ nearRegressi
+ on
+ ectionimporttrai
+ n_test_spl
+ it
+ #Createarandomdatasetwith10samples
+ Heights=np.random.normal(170,10,10)
+ Weights=np.random.normal(70,5,10)
+ #Combinethetwoarraysintoasingledataset
+ Dataset=pd.DataFrame({‘
+ Height’
+ :heights,‘
+ Weight’:wei
+ ghts})
+ ng
+ ntthem.Builda
+#Splitthedataseti
+ ntotraini
+ ngandtestingsets
+ X_trai
+ n,X_test,y_trai
+ n,y_test=trai
+ random_state=42)
+ n_test_spl
+ it(dataset[
+ ‘Height’
+ ],dataset[
+ ‘Weight’
+ #CreateaLinearRegressionmodelandfitittothetrai
+ ningdata
+ Lr_model=LinearRegressi
+ on()
+ Lr_model.fi
+ t(X_trai
+ n.values.
+ #Printthemodelcoeffici
+ Print(‘
+ ModelCoefficients:
+ reshape(-1,1),y_trai
+ ents
+ ’,l
+ r_model.coef_)
+ #Predicttheweightsforthetestdataandpri
+ Y_pred=lr_model.predi
+ ct(X_test.
+ Print(‘
+ Predicti
+ ons:’
+ 

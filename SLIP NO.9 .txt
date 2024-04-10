@@ -1,0 +1,73 @@
+SLIP NO.9 
+Q1. 
+<html> 
+<head> 
+<script type="text/javascript"> 
+function pasuser(form) { 
+if (form.id.value=="ty") {  
+if (form.pass.value=="bcs") {               
+alert("welcome Login successful"); 
+} else { 
+alert("Invalid Password") 
+} 
+} else {  alert("Invalid UserID") 
+} 
+} 
+</script> 
+</head> 
+<body> 
+<center> 
+<form name="login"> 
+Login Area <br> 
+UserID:<input name="id" type="text"><br><br> 
+
+Password:<input name="pass"type="password"><br> 
+<input type="button" value="Login"onClick="pasuser(this.form)"> 
+<input type="Reset"></form></center></body>
+
+2.
+ Items=[‘item1’,’item2’,’item3’,’item4’]
+ Transactions=[[‘item1’,‘item2’,‘item3’],
+ [‘item2’,‘item3’],
+ [‘item1’,‘item2’,‘item4’],
+ [‘item1’,‘item4’],
+ [‘item2’,‘item3’,‘item4’],
+ [‘item1’,‘item3’,‘item4’],
+ [‘item1’,‘item2’],
+ [‘item1’,‘item3’],
+ [‘item3’,‘item4’],
+ [‘item2’,‘item4’]
+ ]
+ Frommlxtend.preprocessingimportTransactionEncoder
+ Frommlxtend.frequent_patternsimportapriori,association_rules
+#Convertthetransacti
+ onsintoabinarymatrix
+ Te=TransactionEncoder()
+ Te_ary=te.fi
+ t_transform(transacti
+ ons)
+ #ConvertthebinarymatrixintoapandasDataFrame
+ Df=pd.DataFrame(te_ary,col
+ umns=te.columns_)
+ #Generatefrequentitemsetswithaminimumsupportof0.3
+ Frequent_i
+ temsets=apriori
+ (df,min_support=0.
+ #Generateassociati
+ 3,use_colnames=True)
+ onruleswithaminimumconfidenceof0.7
+ Associati
+ on_rules=associati
+ on_rules(frequent_i
+ min_threshol
+ d=0.7)
+ #Printthefrequenti
+ temsets,metri
+ c=”confidence”,
+ temsetsandassociationrul
+ es
+ Print(fr
+ equent_itemsets)
+ Print(associ
+ ation_rul
+ es

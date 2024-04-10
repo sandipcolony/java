@@ -1,0 +1,78 @@
+SLIP NO.5 
+Q1. HTML CODE 
+<?xml version="1.0"?> 
+<iteminfo> 
+   <item id="101"> 
+     <iname>pen</iname> 
+      <iprice>15.00</iprice> 
+     <iqty>20</iqty> 
+  </item> 
+ <item id="102"> 
+     <iname>book</iname> 
+      <iprice>38.00</iprice> 
+     <iqty>12</iqty> 
+  </item> 
+ <item id="103"> 
+     <iname>pencil</iname> 
+      <iprice>5.00</iprice> 
+     <iqty>25</iqty> 
+  </item> 
+ <item id="104"> 
+     <iname>calculator</iname> 
+      <iprice>175.00</iprice> 
+
+     <iqty>5</iqty> 
+  </item> 
+ <item id="105"> 
+     <iname>Scale</iname> 
+      <iprice>10.00</iprice> 
+     <iqty>20</iqty> 
+  </item> 
+</iteminfo>
+
+2.
+ Importpandasaspd
+ Fromsklearn.datasetsi
+ Fromsklearn.l
+ mportload_iri
+ s
+ inear_modelimportLogi
+ sticRegressi
+ Fromsklearn.model_sel
+ ectionimporttrai
+ Fromsklearn.metri
+ csimportaccuracy_score
+ #loadtheirisdataset
+ Iri
+ s=load_iri
+ s()
+ #createadataframefromthedataset
+ Df=pd.DataFrame(iri
+ s.data,col
+ on
+ n_test_spl
+ it
+ umns=iris.feature_names)
+ Df[‘
+ target’
+ ]=iris.
+ target
+#viewbasicstatisticaldetailsofthedifferentspecies
+ Print(“StatisticaldetailsofIris-setosa:”)
+ Print(df[df[‘target’]==0].describe())
+ Print(“StatisticaldetailsofIris-versicolor:”)
+ Print(df[df[‘target’]==1].describe())
+ Print(“StatisticaldetailsofIris-virginica:”)
+ Print(df[df[‘target’]==2].describe())
+ #splitthedataintotrainingandtestingsets
+ X=df.iloc[:,:-1]
+ Y=df.iloc[:,-1]
+ X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.2,random_state=42)
+ #fitalogisticregressionmodel
+ Logreg=LogisticRegression()
+ Logreg.fit(X_train,y_train)
+ #makepredictionsonthetestset
+ Y_pred=logreg.predict(X_test)
+ #calculatetheaccuracyofthemodel
+ Accuracy=accuracy_score(y_test,y_pred)
+ Print(“Accuracyofthelogisticregressionmodel:”,accuracy

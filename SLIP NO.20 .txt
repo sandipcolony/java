@@ -1,0 +1,63 @@
+SLIP NO.20 
+Q1. 
+<?xml version="1.0" encoding="UTF-8"?> 
+<students> 
+    <student> 
+        <id>101</id> 
+        <name>John Doe</name> 
+        <major>Computer Science</major> 
+        <grade>85</grade> 
+    </student> 
+    <student> 
+        <id>102</id> 
+        <name>Jane Smith</name> 
+        <major>Electrical Engineering</major> 
+        <grade>92</grade> 
+    </student> 
+    <student> 
+        <id>103</id> 
+        <name>Bob Johnson</name> 
+        <major>Business Administration</major> 
+        <grade>78</grade> 
+    </student> 
+    <student> 
+        <id>104</id> 
+        <name>Alice Lee</name> 
+        <major>Art History</major> 
+        <grade>91</grade> 
+    </student> 
+    <student> 
+        <id>105</id> 
+        <name>Mark Davis</name> 
+        <major>Physics</major> 
+        <grade>88</grade> 
+    </student> 
+</students>
+2.
+ Importnltk
+ Fromnltk.corpusi
+ Nltk.downl
+ mportstopwords
+ oad(‘stopwords’
+ )
+ #Textparagraph
+ Text=“Helloall
+ ,WelcometoPythonProgrammingAcademy.PythonProgrammingAcademyis
+ aniceplatformtolearnnewprogrammingskill
+ #Tokenizethetext
+ Tokens=nltk.word_tokeni
+ ze(text)
+ s.Itisdiffi
+ culttogetenrol
+ ledinthisAcademy.”
+#Removestopwords
+ Stop_words=set(stopwords.words(‘
+ english’
+ ))
+ Filtered_t
+ okens=[wordforwordintokensifnotword.lower()i
+ #Printthefil
+ teredtokens
+ Print(fi
+ ltered_tokens)
+ 

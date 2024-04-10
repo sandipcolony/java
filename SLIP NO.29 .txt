@@ -1,0 +1,59 @@
+SLIP NO.29 
+ 
+<html> 
+<body> 
+ <h1>Number Operations</h1> 
+ <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method=POST> 
+  <p> 
+   <label>Enter a number:</label> 
+   <input type="text" name="t1"> 
+  </p> 
+  <p> 
+                                              Fibbonacci series <input type=radio name=r1 value=f>  <br> 
+              sum of digits <input type=radio name=r1 value=s><br> 
+   <input type="submit" value="Calculate"> 
+  </p> 
+ </form> 
+ <?php 
+     
+                              $ch=$_POST['r1']; 
+                                 
+  $number = $_POST["t1"]; 
+                                     if($ch=='f') 
+                              { 
+  echo "<h2>Fibonacci Series:</h2>"; 
+  echo fibonacciSeries($number); 
+                               } 
+                                else if($ch=='s') 
+                                { 
+  echo "<h2>Sum of Digits:</h2>"; 
+  echo sumOfDigits($number); 
+                               } 
+ // Function to calculate the Fibonacci series 
+ function fibonacciSeries($number)  
+                              { 
+  $p=0; 
+  $c=1; 
+  $series = "0, 1"; 
+  for ($i = 2; $i < $number; $i++) { 
+   $next = $p+$c; 
+   $series .= ", $next"; 
+   $p = $c; 
+   $c = $next; 
+  } 
+  return "<p>$series</p>"; 
+ } 
+ 
+ // Function to calculate the sum of digits 
+ function sumOfDigits($number) { 
+  $sum = 0; 
+  while ($number > 0) { 
+   $digit = $number % 10; 
+   $sum =$sum+ $digit; 
+   $number = floor($number / 10); 
+  } 
+  return "<p>$sum</p>"; 
+ } 
+ ?> 
+</body> 
+</html>

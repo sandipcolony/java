@@ -1,0 +1,102 @@
+SLIP NO.7 
+Q1. 
+HTML CODE 
+<?xml version="1.0"?> 
+<movieinfo> 
+  <movie no="101"> 
+  <title>Sooryavanshi</title> 
+  <actor>akshay kumar</actor> 
+  <ryear>2021</ryear> 
+  </movie> 
+<movie no="102"> 
+  <title>Simba</title> 
+  <actor>Ranbir Singh</actor> 
+  <ryear>2020</ryear> 
+  </movie> 
+<movie no="103"> 
+  <title>Bahubali</title> 
+  <actor>Prabhas</actor> 
+  <ryear>2018</ryear> 
+  </movie> 
+<movie no="104"> 
+  <title>Radhe</title> 
+  <actor>Salman Khan</actor> 
+  <ryear>2020</ryear> 
+  </movie> 
+</movieinfo> 
+    
+ 
+PHP CODE 
+<?php 
+$dom=new DomDocument(); 
+$dom->load("movie.xml"); 
+echo "<b>movies title</b><br>"; 
+$t=$dom->getElementsByTagName("title"); 
+foreach($t as $node) 
+{ 
+    print $node->textContent; 
+    echo "<br>"; 
+} 
+echo "<b>actor name</b><br>"; 
+$t1=$dom->getElementsByTagName("actor"); 
+foreach($t1 as $node) 
+{ 
+print $node->textContent; 
+echo "<br>"; 
+} 
+?>
+2.
+Importpandasaspd
+ Frommlxtend.preprocessi
+ ngimportTransactionEncoder
+ Frommlxtend.frequent_patternsi
+ mportapriori
+ ,associati
+ #readthedataset
+ Df=pd.read_csv(‘
+ Market_Basket_Opti
+ #dropnullvalues
+ Df.dropna(i
+ nplace=True)
+ #convertcategori
+ misation.csv’
+ on_rules
+ ,header=None)
+ calvaluestonumericusingone-hotencodi
+ Te=TransactionEncoder()
+ Te_ary=te.fi
+ t(df.
+ values).
+ transform(df.
+ Df=pd.DataFrame(te_ary,col
+ #generatefrequentitemsetsusi
+ Frequent_i
+ temsets=apriori
+ values)
+ umns=te.columns_)
+ ngapriorial
+ gorithm
+ (df,min_support=0.
+ ng
+ 01,use_colnames=True)
+ #generateassociati
+ onrulesfromfrequentitemsets
+ Rules=association_rul
+ es(frequent_i
+ temsets,metri
+ #displayinformati
+ on
+ Print(“Ori
+ ginalDataset:
+ Print(df.
+ head())
+ Print(“\nFrequentI
+ \n”)
+ temsets:\n”)
+ Print(fr
+ equent_itemsets)
+ Print(“\nAssoci
+ ationRules:
+ Print(rul
+ es)
+ \n”

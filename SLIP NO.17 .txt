@@ -1,0 +1,72 @@
+SLIP NO.17 
+Q1. 
+<!DOCTYPE html> 
+<html> 
+<head> 
+ <title>Hello, Good Morning!</title> 
+</head> 
+<body onload="showAlert()"> 
+ <script> 
+  function showAlert() { 
+   alert("Hello, Good Morning!"); 
+  } 
+ </script> 
+ 
+ <h2>Student Registration Form</h2> 
+ <form> 
+  <label for="name">Name:</label> 
+  <input type="text" id="name" name="name"><br><br> 
+ 
+  <label for="email">Email:</label> 
+  <input type="email" id="email" name="email"><br><br> 
+ 
+  <label for="phone">Phone:</label> 
+  <input type="tel" id="phone" name="phone"><br><br> 
+ 
+  <label for="address">Address:</label> 
+  <textarea id="address" name="address"></textarea><br><br> 
+ 
+  <input type="submit" value="Submit"> 
+ </form> 
+</body> 
+</html>
+2.
+ Importre
+ Fromnltk.tokeni
+ zeimportsent_tokeni
+ #Textparagraph
+ ze
+ Text=“So,keepworking.Keepstrivi
+ vesummarization
+ ng.Nevergiveup.Falldownseventimes,getupeight.Ease
+ isagreaterthreattoprogressthanhardshi
+ p.Easeisagreaterthreattoprogressthanhardshi
+ p.
+ So,keepmoving,keepgrowing,keeplearni
+ ng.Seeyouatwork.”
+ #Removespecialcharactersanddigits
+ Text=re.sub(‘
+ [^A-Za-z]
+ +’,‘‘
+ ,text)
+#Tokenizethesentences
+ Sentences=sent_tokeni
+ ze(text)
+ #Calculatethescoreofeachsentencebasedonthenumberofwords
+ #Thesentenceswithmorewordswillhaveahigherscore
+ Scores={}
+ Forsentenceinsentences:
+ Words=sentence.split()
+ Score=len(words)
+ Scores[sentence]=score
+ #Sortthesentencesbasedontheirscores
+ Sorted_sentences=sorted(scores.
+ items(),key=l
+ ambdax:x[1],reverse=True)
+ #Extractthetop2sentenceswiththehighestscoresasthesummary
+ Summary_sentences=[sentence[0]forsentencei
+ nsorted_sentences[:
+ 2]]
+ Summary=““.join(summary_sentences)
+ #Printthesummary
+ Print(summary

@@ -1,0 +1,135 @@
+SLIP NO.15 
+Q1. 
+HTML CODE 
+<html> 
+<head> 
+<script type="text/javascript" > 
+ 
+
+         function m1(str) 
+         { 
+                     var ob=false; 
+                     ob=new XMLHttpRequest(); 
+                                 
+                     ob.open("GET","q2.php?q="+str); 
+                     ob.send();         
+         
+                     
+ob.onreadystatechange=function() 
+                     { 
+                                 if(ob.readyState==4 && ob.status==200) 
+                                 { 
+                                             document.getElementById("a").innerHTML=ob.responseText; 
+                                 } 
+                     }           
+         } 
+ 
+</script> 
+</head> 
+ 
+<body> 
+<form> 
+2.
+  Importpandasaspd
+ #Createthedataset
+ Data={‘No’:[1,2,3,4]
+ ‘Company’:[‘
+ ,
+ Tata’,‘
+ MG’,‘Kia’
+ ‘Model’
+ :[‘Nexon’
+ ,‘Astor’
+ ‘Year’
+ ,‘Hyundai’
+ ,‘Seltos’
+ :[2017,2021,2019,2015]}
+ Df=pd.DataFrame(data)
+ #Convertcategoricalval
+ ],
+ ,‘Creta’
+ ],
+ uesintonumericformat
+ Df[‘
+ Company’]=pd.Categorical
+ (df[‘
+ Df[‘
+ Model’]=pd.Categori
+ cal(df[
+ Company’])
+ ‘Model’
+ ])
+ Df[‘
+ Company’]=df[‘
+ Company’].cat.
+ codes
+ c
+ temsetsandassociation
+Df[‘
+ Model’]=df[‘
+ Model’].
+ cat.codes
+ Print(df)
+ Frommlxtend.frequent_patternsi
+ mportapriori
+ Frommlxtend.frequent_patternsi
+ mportassociati
+ on_rules
+ #Generatefrequentitemsetswithmin_sup=0.5
+ Frequent_i
+ temsets=apriori
+ (df,min_support=0.
+ Print(fr
+ equent_itemsets)
+ #Generateassociati
+ 5,use_colnames=True)
+ onruleswithmin_threshol
+ d=0.7
+ Associati
+ on_rules=associati
+ on_rules(frequent_i
+ min_threshol
+ d=0.7)
+ Print(associ
+ ation_rul
+ es)
+ @Slip-16
+ temsets,metri
+ c=”confidence”
+Search<input type=text name=search size="20" onkeyup="m1(form.search.value)"> 
+ 
+<input type=button value="submit" onclick="m1(form.search.value)"> 
+ 
+</form> 
+suggestions :<span id="a"></span><br> 
+ 
+</body> 
+</html> 
+PHP Code 
+ 
+ 
+<?php 
+$a=array("amit","ajay","atul","sanket","sarthak","vedant","harshal","pratham","hardik","rahul","aryan"); 
+ 
+$q=$_GET['q']; 
+ 
+if(strlen($q)>0) 
+{        
+         $match=""; 
+     
+         for($i=0;$i<count($a);$i++) 
+         { 
+                     if(strtolower($q)==strtolower(substr($a[$i],0,strlen($q)))) 
+                     { 
+                                 if($match=="") 
+                                 $match=$a[$i];                          
+                                  else  
+   $match=$match.",".$a[$i]; 
+                     }           
+         } 
+if($match=="") 
+echo "no suggestion"; 
+else 
+ echo $match; 
+} 
+?>
